@@ -187,7 +187,7 @@ function buildOutput() {
 }
 
 async function loadLanguages() {
-  const response = await fetch('/locales/index.json', { cache: 'no-store' });
+  const response = await fetch('./index.json', { cache: 'no-store' });
   if (!response.ok) {
     throw new Error('No se pudo cargar /locales/index.json');
   }
@@ -196,8 +196,8 @@ async function loadLanguages() {
 
 async function loadTranslations(lang) {
   const [baseResp, targetResp] = await Promise.all([
-    fetch(`/locales/${BASE_LANG}/translation.json`, { cache: 'no-store' }),
-    fetch(`/locales/${lang}/translation.json`, { cache: 'no-store' }),
+    fetch(`./${BASE_LANG}/translation.json`, { cache: 'no-store' }),
+    fetch(`./${lang}/translation.json`, { cache: 'no-store' }),
   ]);
 
   if (!baseResp.ok) throw new Error('No se pudo cargar la base en español.');
