@@ -15,7 +15,7 @@ i18n
   .init({
     // Idioma por defecto si no se detecta ninguno
     fallbackLng: 'es',
-    supportedLngs: ['es', 'ca', 'eu', 'gl', 'pt', 'fr', 'it', 'en'],
+    supportedLngs: ['es', 'ca', 'eu', 'gl', 'pt', 'fr', 'it', 'de', 'en'],
     // Activa el modo debug en desarrollo
     debug: false,
     // Forzar recarga
@@ -62,6 +62,8 @@ i18n
         if (lng.startsWith('pt')) return 'pt';
         // Si es it-IT, it, etc., devolver solo 'it'
         if (lng.startsWith('it')) return 'it';
+        // Si es de-DE, de, etc., devolver solo 'de'
+        if (lng.startsWith('de')) return 'de';
         // Si es en-US, en-GB, etc., devolver solo 'en'
         if (lng.startsWith('en')) return 'en';
         // Si es fr-FR, fr-CA, etc., devolver solo 'fr'
