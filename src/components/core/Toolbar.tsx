@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { WIDGET_REGISTRY } from '../widgets';
+import { withBaseUrl } from '../../utils/assetPaths';
 
 interface ToolbarProps {
   pinnedWidgets: string[];
@@ -33,7 +34,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ pinnedWidgets, onWidgetClick, 
         className="w-14 h-14 text-white text-2xl rounded-lg flex items-center justify-center hover:bg-black/20 transition-all duration-200 hover:scale-110"
         title={t('toolbar.settings')}
       >
-        <img src="/icons/Settings.png" alt={t('toolbar.settings')} width="52" height="52" />
+        <img src={withBaseUrl('icons/Settings.png')} alt={t('toolbar.settings')} width="52" height="52" />
       </button>
     </div>
   );

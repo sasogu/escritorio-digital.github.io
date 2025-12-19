@@ -4,6 +4,7 @@ import type { WidgetConfig } from '../../../types';
 import { useTranslation } from 'react-i18next';
 import { Upload, Shuffle } from 'lucide-react';
 import './SlidingPuzzle.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 const isSolvable = (order: number[], gridSize: number): boolean => {
   let inversions = 0;
@@ -143,7 +144,7 @@ export const SlidingPuzzleWidget: FC = () => {
 
 const WidgetIcon: FC = () => {
     const { t } = useTranslation();
-    return <img src="/icons/SlidePuzzle.png" alt={t('widgets.sliding_puzzle.icon_alt')} width="52" height="52" />;
+    return <img src={withBaseUrl('icons/SlidePuzzle.png')} alt={t('widgets.sliding_puzzle.icon_alt')} width="52" height="52" />;
 }
 
 export const widgetConfig: Omit<WidgetConfig, 'component'> = {

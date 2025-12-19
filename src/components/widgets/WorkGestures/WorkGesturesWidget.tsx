@@ -4,6 +4,7 @@ import type { WidgetConfig } from '../../../types';
 import { useTranslation } from 'react-i18next';
 import { Hand, Users, User, MessageSquare } from 'lucide-react';
 import './WorkGestures.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 const gestureData = [
   {
@@ -82,7 +83,7 @@ export const WorkGesturesWidget: FC = () => {
 
 const WidgetIcon: FC = () => {
     const { t } = useTranslation();
-    return <img src="/icons/WorkGestures.png" alt={t('widgets.work_gestures.icon_alt')} width="52" height="52" />;
+    return <img src={withBaseUrl('icons/WorkGestures.png')} alt={t('widgets.work_gestures.icon_alt')} width="52" height="52" />;
 }
 
 export const widgetConfig: Omit<WidgetConfig, 'component'> = {

@@ -9,6 +9,7 @@ import type { WidgetConfig } from '../../../types';
 import { useTranslation } from 'react-i18next';
 import './Notepad.css';
 import {
+import { withBaseUrl } from '../../../utils/assetPaths';
   Bold,
   Italic,
   Strikethrough,
@@ -133,7 +134,7 @@ export const NotepadWidget: React.FC = () => {
 
 const WidgetIcon: React.FC = () => {
     const { t } = useTranslation();
-    return <img src="/icons/Notepad.png" alt={t('widgets.notepad.icon_alt')} width="52" height="52" />;
+    return <img src={withBaseUrl('icons/Notepad.png')} alt={t('widgets.notepad.icon_alt')} width="52" height="52" />;
 }
 
 export const widgetConfig: Omit<WidgetConfig, 'component'> = {

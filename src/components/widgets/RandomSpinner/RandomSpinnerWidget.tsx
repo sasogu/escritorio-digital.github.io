@@ -5,6 +5,7 @@ import { Trash2, Plus, Play, Expand, Minimize } from 'lucide-react';
 import { useLocalStorage } from '../../../hooks/useLocalStorage';
 import { useTranslation } from 'react-i18next';
 import './RandomSpinner.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 interface SpinnerOption {
   text: string;
@@ -217,7 +218,7 @@ export const RandomSpinnerWidget: FC = () => {
 
 const WidgetIcon: FC = () => {
     const { t } = useTranslation();
-    return <img src="/icons/RandomSpinner.png" alt={t('widgets.random_spinner.icon_alt')} width="52" height="52" />;
+    return <img src={withBaseUrl('icons/RandomSpinner.png')} alt={t('widgets.random_spinner.icon_alt')} width="52" height="52" />;
 }
 
 export const widgetConfig: Omit<WidgetConfig, 'component'> = {

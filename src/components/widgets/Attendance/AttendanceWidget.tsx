@@ -6,6 +6,7 @@ import type { WidgetConfig } from '../../../types';
 import Papa from 'papaparse';
 import { Users, Badge, UserPlus, Upload, Download, RotateCcw, AlertTriangle } from 'lucide-react';
 import './Attendance.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 // --- Tipos de Datos ---
 interface BadgeInfo {
@@ -277,7 +278,7 @@ export const widgetConfig: Omit<WidgetConfig, 'component'> = {
   icon: (() => {
     const WidgetIcon: React.FC = () => {
       const { t } = useTranslation();
-      return <img src="/icons/Attendance.png" alt={t('widgets.attendance.title')} width={52} height={52} />;
+      return <img src={withBaseUrl('icons/Attendance.png')} alt={t('widgets.attendance.title')} width={52} height={52} />;
     };
     return <WidgetIcon />;
   })(),

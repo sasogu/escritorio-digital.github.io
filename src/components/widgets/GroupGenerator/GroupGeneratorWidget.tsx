@@ -5,6 +5,7 @@ import type { WidgetConfig } from '../../../types';
 // CORRECCIÓN: Se eliminaron 'Users' y 'ListCollapse' de esta línea
 import { Upload } from 'lucide-react';
 import './GroupGeneratorWidget.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 type GroupMode = 'byCount' | 'bySize';
 
@@ -119,7 +120,7 @@ export const widgetConfig: Omit<WidgetConfig, 'component'> = {
   icon: (() => {
     const WidgetIcon: React.FC = () => {
       const { t } = useTranslation();
-      return <img src="/icons/GroupGenerator.png" alt={t('widgets.group_generator.title')} width={52} height={52} />;
+      return <img src={withBaseUrl('icons/GroupGenerator.png')} alt={t('widgets.group_generator.title')} width={52} height={52} />;
     };
     return <WidgetIcon />;
   })(),

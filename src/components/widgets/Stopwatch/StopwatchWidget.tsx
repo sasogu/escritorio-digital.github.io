@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import type { WidgetConfig } from '../../../types';
 import { Play, Pause, RotateCcw, Flag } from 'lucide-react';
 import './Stopwatch.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 // Función para formatear el tiempo de milisegundos a MM:SS.ms
 const formatTime = (time: number) => {
@@ -92,7 +93,7 @@ export const StopwatchWidget: FC = () => {
 
 const WidgetIcon: FC = () => {
   const { t } = useTranslation();
-  return <img src="/icons/Stopwatch.png" alt={t('widgets.stopwatch.title')} width={52} height={52} />;
+  return <img src={withBaseUrl('icons/Stopwatch.png')} alt={t('widgets.stopwatch.title')} width={52} height={52} />;
 }
 
 export const widgetConfig: Omit<WidgetConfig, 'component'> = {

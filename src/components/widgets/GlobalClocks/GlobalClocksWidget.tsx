@@ -5,6 +5,7 @@ import type { WidgetConfig } from '../../../types';
 import { useLocalStorage } from '../../../hooks/useLocalStorage';
 import { Trash2 } from 'lucide-react';
 import './GlobalClocks.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 // --- Lista de Zonas Horarias (Formato IANA) ---
 const TIMEZONES = [
@@ -109,7 +110,7 @@ export const widgetConfig: Omit<WidgetConfig, 'component'> = {
   icon: (() => {
     const WidgetIcon: React.FC = () => {
       const { t } = useTranslation();
-      return <img src="/icons/GlobalClocks.png" alt={t('widgets.global_clocks.title')} width={52} height={52} />;
+      return <img src={withBaseUrl('icons/GlobalClocks.png')} alt={t('widgets.global_clocks.title')} width={52} height={52} />;
     };
     return <WidgetIcon />;
   })(),

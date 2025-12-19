@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import type { WidgetConfig } from '../../../types';
 import { Info } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 // --- Estilos CSS como objetos de JavaScript ---
 
@@ -73,7 +74,7 @@ export const AppViewerWidget: FC = () => {
 // --- Configuración del Widget ---
 const WidgetIcon: React.FC = () => {
   const { t } = useTranslation();
-  return <img src="/icons/Directo.png" alt={t('widgets.directo_viewer.title')} width={52} height={52} />;
+  return <img src={withBaseUrl('icons/Directo.png')} alt={t('widgets.directo_viewer.title')} width={52} height={52} />;
 }
 
 export const widgetConfig: Omit<WidgetConfig, 'component'> = {

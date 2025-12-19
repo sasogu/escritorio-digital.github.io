@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 // Importamos todos los iconos necesarios, incluyendo Type para la herramienta de texto y iconos de navegación
 import { Paintbrush, Eraser, Trash2, Pen, Highlighter, SprayCan, Image as ImageIcon, Save as SaveIcon, LineChart, Square, Circle, ArrowRight, Type, RotateCcw, Move } from 'lucide-react';
+import { withBaseUrl } from '../../../utils/assetPaths';
 // Asumiendo que WidgetConfig existe en tu proyecto. Si no, puedes quitar esta línea o definirla.
 
 // --- El Componente Principal del Widget de Dibujo ---
@@ -888,7 +889,7 @@ export const widgetConfig = {
   icon: (() => {
     const WidgetIcon: React.FC = () => {
       const { t } = useTranslation();
-      return <img src="/icons/paleta.png" alt={t('widgets.drawing_pad.title')} className="w-8 h-8" />;
+      return <img src={withBaseUrl('icons/paleta.png')} alt={t('widgets.drawing_pad.title')} className="w-8 h-8" />;
     };
     return <WidgetIcon />;
   })(),

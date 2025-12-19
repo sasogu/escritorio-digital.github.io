@@ -11,6 +11,7 @@ import { Clipboard, Image as ImageIcon, FileDown, FileText } from 'lucide-react'
 
 import 'katex/dist/katex.min.css';
 import './LatexMarkdownWidget.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 type Mode = 'markdown' | 'latex';
 
@@ -242,7 +243,7 @@ export const widgetConfig: Omit<WidgetConfig, 'component'> = {
   icon: (() => {
     const WidgetIcon: React.FC = () => {
       const { t } = useTranslation();
-      return <img src="/icons/LatexMarkdown.png" alt={t('widgets.latex_markdown.title')} width={52} height={52} />;
+      return <img src={withBaseUrl('icons/LatexMarkdown.png')} alt={t('widgets.latex_markdown.title')} width={52} height={52} />;
     };
     return <WidgetIcon />;
   })(),

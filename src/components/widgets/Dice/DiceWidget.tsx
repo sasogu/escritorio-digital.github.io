@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Dices, Info } from 'lucide-react';
 import type { WidgetConfig } from '../../../types';
 import './Dice.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 // ... (Interfaz DieState sin cambios)
 interface DieState {
@@ -144,7 +145,7 @@ export const widgetConfig: Omit<WidgetConfig, 'component'> = {
   icon: (() => {
     const WidgetIcon: React.FC = () => {
       const { t } = useTranslation();
-      return <img src="/icons/Dice.png" alt={t('widgets.dice.title')} width={52} height={52} />;
+      return <img src={withBaseUrl('icons/Dice.png')} alt={t('widgets.dice.title')} width={52} height={52} />;
     };
     return <WidgetIcon />;
   })(),

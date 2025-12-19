@@ -5,6 +5,7 @@ import type { WidgetConfig } from '../../../types';
 import { QrCode } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import './QrCodeGenerator.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 export const QrCodeGeneratorWidget: FC = () => {
   const { t } = useTranslation();
@@ -52,7 +53,7 @@ export const QrCodeGeneratorWidget: FC = () => {
 
 const WidgetIcon: FC = () => {
     const { t } = useTranslation();
-    return <img src="/icons/QrCodeGenerator.png" alt={t('widgets.qr_code_generator.icon_alt')} width="52" height="52" />;
+    return <img src={withBaseUrl('icons/QrCodeGenerator.png')} alt={t('widgets.qr_code_generator.icon_alt')} width="52" height="52" />;
 }
 
 export const widgetConfig: Omit<WidgetConfig, 'component'> = {

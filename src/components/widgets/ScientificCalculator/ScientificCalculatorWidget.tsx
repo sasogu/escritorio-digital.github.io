@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { WidgetConfig } from '../../../types';
 import './ScientificCalculatorWidget.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 // Layouts de botones (sin cambios)
 const basicLayout = [
@@ -285,7 +286,7 @@ export const widgetConfig: Omit<WidgetConfig, 'component'> = {
   icon: (() => {
     const WidgetIcon: React.FC = () => {
       const { t } = useTranslation();
-      return <img src="/icons/ScientificCalculator.png" alt={t('widgets.scientific_calculator.title')} width={52} height={52} />;
+      return <img src={withBaseUrl('icons/ScientificCalculator.png')} alt={t('widgets.scientific_calculator.title')} width={52} height={52} />;
     };
     return <WidgetIcon />;
   })(),

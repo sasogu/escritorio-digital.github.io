@@ -5,6 +5,7 @@ import type { WidgetConfig } from '../../../types';
 import { useLocalStorage } from '../../../hooks/useLocalStorage';
 import { RotateCcw, X, Circle } from 'lucide-react';
 import './TicTacToe.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 // El componente principal del Tic-Tac-Toe
 export const TicTacToeWidget: FC = () => {
@@ -125,7 +126,7 @@ export const widgetConfig: Omit<WidgetConfig, 'component'> = {
   icon: (() => {
     const WidgetIcon: React.FC = () => {
       const { t } = useTranslation();
-      return <img src="/icons/TicTacToe.png" alt={t('widgets.tic_tac_toe.title')} width={52} height={52} />;
+      return <img src={withBaseUrl('icons/TicTacToe.png')} alt={t('widgets.tic_tac_toe.title')} width={52} height={52} />;
     };
     return <WidgetIcon />;
   })(),

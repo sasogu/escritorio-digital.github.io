@@ -4,6 +4,7 @@ import type { WidgetConfig } from '../../../types';
 import { Eye, Code } from 'lucide-react';
 import './HtmlSandboxWidget.css';
 import { useTranslation } from 'react-i18next';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 export const HtmlSandboxWidget: FC = () => {
   const { t } = useTranslation();
@@ -47,7 +48,7 @@ export const HtmlSandboxWidget: FC = () => {
 
 const WidgetIcon: FC = () => {
   const { t } = useTranslation();
-  return <img src="/icons/HtmlSandbox.png" alt={t('widgets.html_sandbox.title')} width={52} height={52} />;
+  return <img src={withBaseUrl('icons/HtmlSandbox.png')} alt={t('widgets.html_sandbox.title')} width={52} height={52} />;
 };
 
 export const widgetConfig: Omit<WidgetConfig, 'component'> = {

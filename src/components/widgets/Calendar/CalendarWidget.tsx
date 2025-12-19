@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { WidgetConfig } from '../../../types';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 // A. El Componente de React con toda la lógica
 export const CalendarWidget: FC = () => {
@@ -76,7 +77,7 @@ export const widgetConfig: Omit<WidgetConfig, 'component'> = {
   icon: (() => {
     const WidgetIcon: React.FC = () => {
       const { t } = useTranslation();
-      return <img src="/icons/Calendar.png" alt={t('widgets.calendar.title')} width={52} height={52} />;
+      return <img src={withBaseUrl('icons/Calendar.png')} alt={t('widgets.calendar.title')} width={52} height={52} />;
     };
     return <WidgetIcon />;
   })(),

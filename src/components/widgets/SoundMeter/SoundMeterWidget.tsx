@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import type { WidgetConfig } from '../../../types';
 import { Mic, MicOff } from 'lucide-react';
 import './SoundMeter.css';
+import { withBaseUrl } from '../../../utils/assetPaths';
 
 // ... (El resto del archivo no necesita cambios)
 type NoiseLevel = 'silence' | 'conversation' | 'noise';
@@ -143,7 +144,7 @@ export const widgetConfig: Omit<WidgetConfig, 'component'> = {
   icon: (() => {
     const WidgetIcon: React.FC = () => {
       const { t } = useTranslation();
-      return <img src="/icons/SoundMeter.png" alt={t('widgets.sound_meter.title')} width={52} height={52} />;
+      return <img src={withBaseUrl('icons/SoundMeter.png')} alt={t('widgets.sound_meter.title')} width={52} height={52} />;
     };
     return <WidgetIcon />;
   })(),
