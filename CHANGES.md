@@ -42,6 +42,7 @@
   - Generador de grupos: vista grande.
   - Menú contextual del escritorio.
 - Corrección de ubicación de claves `context_menu` en todos los idiomas.
+- Traducción al alemán añadida (trabajo previo).
 
 ## Otros
 - Ajuste de tamaño por defecto de la ruleta y mejoras de layout.
