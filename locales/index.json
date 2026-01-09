@@ -1,0 +1,11 @@
+[
+  { "code": "es", "name": "Español" },
+  { "code": "ca", "name": "Català" },
+  { "code": "eu", "name": "Euskara" },
+  { "code": "gl", "name": "Galego" },
+  { "code": "pt", "name": "Português" },
+  { "code": "fr", "name": "Français" },
+  { "code": "it", "name": "Italiano" },
+  { "code": "de", "name": "Deutsch" },
+  { "code": "en", "name": "English" }
+]
