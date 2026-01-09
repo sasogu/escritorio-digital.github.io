@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ChevronUp, ChevronsUpDown } from 'lucide-react';
 import type { ProfileCollection } from '../../types';
 import { useTranslation } from 'react-i18next';
@@ -20,6 +20,7 @@ export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
   const profileNames = Object.keys(profiles);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleProfileSelect = (name: string) => {
     setActiveProfileName(name);
@@ -31,9 +32,21 @@ export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!containerRef.current) return;
+      if (!containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
+
   return (
     // Contenedor principal en la esquina inferior derecha
-    <div className="fixed bottom-4 right-4 z-[9999]">
+    <div className="fixed bottom-4 right-4 z-[9999]" ref={containerRef}>
       <div className="relative">
         {/* Menú desplegable que aparece cuando isOpen es true */}
         {isOpen && (
@@ -59,7 +72,7 @@ export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
                 onClick={handleManageProfiles}
                 className="w-full text-left px-3 py-2 rounded-md hover:bg-accent hover:text-text-dark transition-colors font-semibold"
               >
-                {t('settings.profiles.create_new_button')}
+                {t('settings.profiles.manage_button')}
               </button>
             </div>
           </div>

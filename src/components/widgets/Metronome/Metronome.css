@@ -1,5 +1,7 @@
 .metronome-widget {
-  @apply w-full h-full flex flex-col items-center justify-around p-6 bg-gray-800 text-white;
+  gap: clamp(0.75rem, 2.2vh, 1.5rem);
+  padding: clamp(0.75rem, 2.2vh, 1.5rem);
+  @apply w-full h-full flex flex-col items-center justify-center bg-gray-800 text-white overflow-hidden;
 }
 
 .bpm-display {
@@ -7,15 +9,16 @@
 }
 
 .bpm-value {
-  @apply text-7xl font-mono font-bold;
+  font-size: clamp(2.5rem, 10vh, 5.5rem);
+  @apply font-mono font-bold;
 }
 
 .bpm-label {
-  @apply block text-sm text-gray-400 -mt-2;
+  @apply block text-xs text-gray-400 -mt-1;
 }
 
 .bpm-slider {
-  @apply w-full px-2;
+  @apply w-full max-w-2xl px-2;
 }
 
 .bpm-slider input[type="range"] {
@@ -23,11 +26,13 @@
 }
 
 .beat-indicators {
-  @apply flex gap-3 my-4;
+  @apply flex gap-2;
 }
 
 .beat-dot {
-  @apply w-4 h-4 bg-gray-600 rounded-full transition-all duration-100;
+  width: clamp(0.6rem, 1.4vw, 1rem);
+  height: clamp(0.6rem, 1.4vw, 1rem);
+  @apply bg-gray-600 rounded-full transition-all duration-100;
 }
 
 .beat-dot.active {
@@ -40,16 +45,19 @@
 
 
 .controls {
-  @apply w-full flex flex-col items-center gap-4;
+  gap: clamp(0.5rem, 1.6vh, 1rem);
+  @apply w-full max-w-md flex flex-col items-center;
 }
 
 .measure-control {
-  @apply flex items-center gap-4 text-lg font-semibold;
+  @apply flex items-center gap-4 text-base font-semibold;
 }
 .measure-control button {
   @apply w-8 h-8 rounded-full bg-gray-700 hover:bg-gray-600 disabled:opacity-50;
 }
 
 .play-button {
-  @apply w-20 h-20 rounded-full flex items-center justify-center text-accent bg-gray-700 hover:bg-gray-600 transition-colors;
+  width: clamp(2.75rem, 8vh, 4.5rem);
+  height: clamp(2.75rem, 8vh, 4.5rem);
+  @apply rounded-full flex items-center justify-center text-accent bg-gray-700 hover:bg-gray-600 transition-colors;
 }
