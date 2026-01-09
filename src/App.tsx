@@ -11,6 +11,7 @@ import { CreditsModal } from './components/core/CreditsModal';
 import { ThemeProvider, defaultTheme, type Theme } from './context/ThemeContext';
 import type { ActiveWidget, DesktopProfile, ProfileCollection } from './types';
 import { Copyright, PlusSquare, Settings, Image, Eye, EyeOff, X, Users } from 'lucide-react';
+import { defaultWallpaperValue, isWallpaperValueValid } from './utils/wallpapers';
 // --- ¡AQUÍ ESTÁ EL CAMBIO! Importamos el nuevo componente ---
 import { ProfileSwitcher } from './components/core/ProfileSwitcher';
 
@@ -336,6 +337,12 @@ function App() {
             }
         }
     }, [theme]);
+
+    useEffect(() => {
+        if (theme['--wallpaper'] && !isWallpaperValueValid(theme['--wallpaper'])) {
+            handleThemeChange((prevTheme) => ({ ...prevTheme, '--wallpaper': defaultWallpaperValue }));
+        }
+    }, [theme['--wallpaper']]);
 
     const themeContextValue = {
         theme,
