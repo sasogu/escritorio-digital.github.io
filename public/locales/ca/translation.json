@@ -29,6 +29,7 @@
       "delete_confirm": "Estàs segur que vols eliminar el perfil \"{{name}}\"?",
       "save_current_title": "Desar la Configuració Actual com a Nou Perfil",
       "new_profile_placeholder": "Nom del nou perfil...",
+      "create_new_button": "Crear nou perfil",
       "save_button": "Desar",
       "saved_profiles_title": "Perfils Desats",
       "active_button": "Actiu",
@@ -85,6 +86,12 @@
     "hide_toolbar": "Amaga la barra inferior",
     "reset_layout": "Tancar totes les finestres",
     "reset_layout_confirm": "Vols tancar totes les finestres de l'escriptori?"
+  },
+  "storage_warning": {
+    "title": "Emmagatzematge ple",
+    "body": "El navegador està gairebé ple. Hem desat els canvis en un emmagatzematge ampliat. Per alliberar espai sense perdre-ho tot, elimina imatges del carrusel o esborra notes molt llargues.",
+    "open_settings": "Obrir ajustos",
+    "dismiss": "Tancar"
   },
   "widgets": {
     "attendance": {

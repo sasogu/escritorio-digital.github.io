@@ -28,6 +28,7 @@
       "delete_confirm": "Ziur zaude \"{{name}}\" profila ezabatu nahi duzula?",
       "save_current_title": "Gorde uneko konfigurazioa profil berri gisa",
       "new_profile_placeholder": "Profil berriaren izena...",
+      "create_new_button": "Sortu profil berria",
       "save_button": "Gorde",
       "saved_profiles_title": "Gordetako profilak",
       "active_button": "Aktibo",
@@ -84,6 +85,12 @@
     "hide_toolbar": "Ezkutatu beheko barra",
     "reset_layout": "Itxi leiho guztiak",
     "reset_layout_confirm": "Mahaigaineko leiho guztiak itxi nahi dituzu?"
+  },
+  "storage_warning": {
+    "title": "Biltegiratzea beteta",
+    "body": "Nabigatzailea ia beteta dago. Aldaketak biltegiratze zabalduan gorde ditugu. Espazioa askatzeko dena galdu gabe, ezabatu karuselaren irudiak edo oso luzeak diren oharrak.",
+    "open_settings": "Ezarpenak ireki",
+    "dismiss": "Itxi"
   },
   "widgets": {
     "attendance": {

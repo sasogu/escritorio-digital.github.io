@@ -29,6 +29,7 @@
       "delete_confirm": "Möchtest du das Profil \"{{name}}\" wirklich löschen?",
       "save_current_title": "Aktuelle Einstellungen als neues Profil speichern",
       "new_profile_placeholder": "Neuer Profilname...",
+      "create_new_button": "Neues Profil erstellen",
       "save_button": "Speichern",
       "saved_profiles_title": "Gespeicherte Profile",
       "active_button": "Aktiv",
@@ -85,6 +86,12 @@
     "hide_toolbar": "Untere Leiste ausblenden",
     "reset_layout": "Alle Fenster schließen",
     "reset_layout_confirm": "Möchtest du alle Fenster auf dem Desktop schließen?"
+  },
+  "storage_warning": {
+    "title": "Speicher voll",
+    "body": "Der Browser ist fast voll. Wir haben deine Änderungen in einem erweiterten Speicher abgelegt. Um Platz zu schaffen, ohne alles zu verlieren, entferne Bilder aus dem Karussell oder lösche sehr lange Notizen.",
+    "open_settings": "Einstellungen öffnen",
+    "dismiss": "Schließen"
   },
   "widgets": {
     "attendance": {

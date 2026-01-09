@@ -21,15 +21,17 @@ export const ProfileManager: React.FC<ProfileManagerProps> = ({
   const { theme } = useTheme();
 
   const handleSaveCurrent = () => {
-    if (newProfileName.trim() && !profiles[newProfileName.trim()]) {
+    const trimmedName = newProfileName.trim();
+    if (trimmedName && !profiles[trimmedName]) {
       const currentProfile = profiles[activeProfileName];
       setProfiles(prev => ({
         ...prev,
-        [newProfileName.trim()]: {
+        [trimmedName]: {
             ...currentProfile,
             theme: theme,
         }
       }));
+      setActiveProfileName(trimmedName);
       setNewProfileName('');
     } else {
       alert(t('settings.profiles.invalid_name_alert'));

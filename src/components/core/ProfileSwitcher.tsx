@@ -8,12 +8,14 @@ interface ProfileSwitcherProps {
   profiles: ProfileCollection;
   activeProfileName: string;
   setActiveProfileName: (name: string) => void;
+  onManageProfiles: () => void;
 }
 
 export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
   profiles,
   activeProfileName,
   setActiveProfileName,
+  onManageProfiles,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
@@ -21,6 +23,11 @@ export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
 
   const handleProfileSelect = (name: string) => {
     setActiveProfileName(name);
+    setIsOpen(false);
+  };
+
+  const handleManageProfiles = () => {
+    onManageProfiles();
     setIsOpen(false);
   };
 
@@ -36,13 +43,25 @@ export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
                 <li key={name}>
                   <button
                     onClick={() => handleProfileSelect(name)}
-                    className="w-full text-left px-3 py-2 rounded-md hover:bg-accent hover:text-text-dark transition-colors"
+                    className={`w-full text-left px-3 py-2 rounded-md transition-colors ${
+                      name === activeProfileName
+                        ? 'font-semibold bg-accent/30 text-text-dark'
+                        : 'hover:bg-accent hover:text-text-dark'
+                    }`}
                   >
                     {name}
                   </button>
                 </li>
               ))}
             </ul>
+            <div className="border-t border-black/10 p-1">
+              <button
+                onClick={handleManageProfiles}
+                className="w-full text-left px-3 py-2 rounded-md hover:bg-accent hover:text-text-dark transition-colors font-semibold"
+              >
+                {t('settings.profiles.create_new_button')}
+              </button>
+            </div>
           </div>
         )}
 

@@ -30,6 +30,7 @@
       "delete_confirm": "Êtes-vous sûr de vouloir supprimer le profil \"{{name}}\" ?",
       "save_current_title": "Enregistrer la configuration actuelle comme nouveau profil",
       "new_profile_placeholder": "Nom du nouveau profil...",
+      "create_new_button": "Créer un nouveau profil",
       "save_button": "Enregistrer",
       "saved_profiles_title": "Profils enregistrés",
       "active_button": "Actif",
@@ -86,6 +87,12 @@
     "hide_toolbar": "Masquer la barre inférieure",
     "reset_layout": "Fermer toutes les fenêtres",
     "reset_layout_confirm": "Voulez-vous fermer toutes les fenêtres du bureau ?"
+  },
+  "storage_warning": {
+    "title": "Stockage plein",
+    "body": "Le navigateur est presque plein. Nous avons enregistré vos changements dans un stockage étendu. Pour libérer de l'espace sans tout perdre, supprimez des images du carrousel ou effacez des notes très longues.",
+    "open_settings": "Ouvrir les réglages",
+    "dismiss": "Fermer"
   },
   "widgets": {
     "attendance": {

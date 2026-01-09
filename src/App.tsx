@@ -8,9 +8,9 @@ import { WidgetWindow } from './components/core/WidgetWindow';
 import { Toolbar } from './components/core/Toolbar';
 import { SettingsModal } from './components/core/SettingsModal';
 import { CreditsModal } from './components/core/CreditsModal';
-import { ThemeProvider, defaultTheme } from './context/ThemeContext';
+import { ThemeProvider, defaultTheme, type Theme } from './context/ThemeContext';
 import type { ActiveWidget, DesktopProfile, ProfileCollection } from './types';
-import { Copyright, PlusSquare, Settings, Image, Eye, EyeOff, RotateCcw, Users } from 'lucide-react';
+import { Copyright, PlusSquare, Settings, Image, Eye, EyeOff, X, Users } from 'lucide-react';
 // --- ¡AQUÍ ESTÁ EL CAMBIO! Importamos el nuevo componente ---
 import { ProfileSwitcher } from './components/core/ProfileSwitcher';
 
@@ -43,6 +43,7 @@ const DesktopUI: React.FC<{
     const [isToolbarHidden, setToolbarHidden] = useLocalStorage<boolean>('toolbar-hidden', false);
     const [contextMenu, setContextMenu] = useState({ isOpen: false, x: 0, y: 0 });
     const contextMenuRef = useRef<HTMLDivElement>(null);
+    const [showStorageWarning, setShowStorageWarning] = useState(false);
 
     const addWidget = (widgetId: string) => {
         const widgetConfig = WIDGET_REGISTRY[widgetId];
@@ -130,6 +131,14 @@ const DesktopUI: React.FC<{
         return () => cancelAnimationFrame(frameId);
     }, [contextMenu.isOpen, contextMenu.x, contextMenu.y]);
 
+    useEffect(() => {
+        const handleStorageWarning = () => {
+            setShowStorageWarning(true);
+        };
+        window.addEventListener('storage-quota-exceeded', handleStorageWarning);
+        return () => window.removeEventListener('storage-quota-exceeded', handleStorageWarning);
+    }, []);
+
     const openSettingsTab = (tab: 'general' | 'profiles' | 'widgets' | 'theme') => {
         setSettingsInitialTab(tab);
         setSettingsOpen(true);
@@ -202,7 +211,29 @@ const DesktopUI: React.FC<{
               profiles={profiles}
               activeProfileName={activeProfileName}
               setActiveProfileName={setActiveProfileName}
+              onManageProfiles={() => openSettingsTab('profiles')}
             />
+
+            {showStorageWarning && (
+                <div className="fixed top-4 right-4 z-[10002] max-w-sm bg-white/95 backdrop-blur-md border border-amber-200 shadow-xl rounded-lg p-4 text-sm text-text-dark">
+                    <p className="font-semibold text-amber-700">{t('storage_warning.title')}</p>
+                    <p className="mt-1 text-gray-700">{t('storage_warning.body')}</p>
+                    <div className="mt-3 flex gap-2">
+                        <button
+                            className="px-3 py-1.5 rounded-md bg-amber-500 text-white hover:bg-amber-600 transition"
+                            onClick={() => openSettingsTab('general')}
+                        >
+                            {t('storage_warning.open_settings')}
+                        </button>
+                        <button
+                            className="px-3 py-1.5 rounded-md border border-gray-300 text-gray-700 hover:bg-gray-100 transition"
+                            onClick={() => setShowStorageWarning(false)}
+                        >
+                            {t('storage_warning.dismiss')}
+                        </button>
+                    </div>
+                </div>
+            )}
 
             {contextMenu.isOpen && (
                 <div
@@ -253,7 +284,7 @@ const DesktopUI: React.FC<{
                         className="w-full text-left px-4 py-2 hover:bg-gray-100 text-red-700 flex items-center gap-2"
                         onClick={resetLayout}
                     >
-                        <RotateCcw size={16} />
+                        <X size={16} />
                         {t('context_menu.reset_layout')}
                     </button>
                 </div>
@@ -280,7 +311,7 @@ function App() {
     const activeProfile = profiles[activeProfileName] || Object.values(profiles)[0];
     const theme = activeProfile.theme || defaultTheme;
 
-    const handleThemeChange = (newThemeOrUpdater: any) => {
+    const handleThemeChange = (newThemeOrUpdater: Theme | ((val: Theme) => Theme)) => {
         const currentTheme = activeProfile.theme;
         const newTheme = typeof newThemeOrUpdater === 'function' ? newThemeOrUpdater(currentTheme) : newThemeOrUpdater;
         const newProfileData = { ...activeProfile, theme: newTheme };
@@ -288,7 +319,7 @@ function App() {
     };
 
     const handleWallpaperChange = (wallpaperUrl: string) => {
-        handleThemeChange((prevTheme: any) => ({ ...prevTheme, '--wallpaper': wallpaperUrl }));
+        handleThemeChange((prevTheme) => ({ ...prevTheme, '--wallpaper': wallpaperUrl }));
     };
 
     const resetTheme = () => {

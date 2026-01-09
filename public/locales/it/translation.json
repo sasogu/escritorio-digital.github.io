@@ -29,6 +29,7 @@
       "delete_confirm": "Sei sicuro di voler eliminare il profilo \"{{name}}\"?",
       "save_current_title": "Salva le impostazioni correnti come nuovo profilo",
       "new_profile_placeholder": "Nome del nuovo profilo...",
+      "create_new_button": "Crea nuovo profilo",
       "save_button": "Salva",
       "saved_profiles_title": "Profili salvati",
       "active_button": "Attivo",
@@ -85,6 +86,12 @@
     "hide_toolbar": "Nascondi barra inferiore",
     "reset_layout": "Chiudi tutte le finestre",
     "reset_layout_confirm": "Vuoi chiudere tutte le finestre del desktop?"
+  },
+  "storage_warning": {
+    "title": "Spazio di archiviazione pieno",
+    "body": "Il browser è quasi pieno. Abbiamo salvato le modifiche in un archivio esteso. Per liberare spazio senza perdere tutto, elimina le immagini del carosello o cancella note molto lunghe.",
+    "open_settings": "Apri impostazioni",
+    "dismiss": "Chiudi"
   },
   "widgets": {
     "attendance": {

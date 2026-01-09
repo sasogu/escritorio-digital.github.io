@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
+import { wallpaperUrls } from '../../utils/wallpapers';
 
 export const ThemeSettings: React.FC = () => {
   const { t } = useTranslation();
@@ -32,6 +33,7 @@ export const ThemeSettings: React.FC = () => {
     { id: '--color-text-light', labelKey: 'text_light' },
     { id: '--color-text-dark', labelKey: 'text_dark' },
   ];
+  const wallpaperOptions = wallpaperUrls;
 
   return (
     <div className="p-4 space-y-6">
@@ -56,6 +58,28 @@ export const ThemeSettings: React.FC = () => {
 
       <div>
         <h3 className="text-lg font-semibold mb-2">{t('settings.theme.wallpaper_title')}</h3>
+        <div className="grid grid-cols-3 gap-3 mb-4 max-h-56 overflow-y-auto pr-1">
+          {wallpaperOptions.map((wallpaperUrl) => {
+            const wallpaperValue = `url(${wallpaperUrl})`;
+            const isActive = theme['--wallpaper'] === wallpaperValue;
+            return (
+              <button
+                key={wallpaperUrl}
+                type="button"
+                onClick={() => setWallpaper(wallpaperValue)}
+                className={`h-20 rounded-lg border transition-all ${
+                  isActive ? 'border-accent ring-2 ring-accent' : 'border-gray-200 hover:border-gray-400'
+                }`}
+                style={{
+                  backgroundImage: wallpaperValue,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+                aria-label={t('settings.theme.wallpaper_title')}
+              />
+            );
+          })}
+        </div>
         <div className="flex gap-2">
             <button
                 onClick={() => fileInputRef.current?.click()}
