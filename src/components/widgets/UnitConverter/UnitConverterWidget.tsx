@@ -67,7 +67,7 @@ export const UnitConverterWidget: FC = () => {
         else if (fromUnit === 'kelvin') baseValue = fromVal - 273.15;
         else baseValue = fromVal;
       } else {
-        const toBaseConverter = Object.entries(units).find(([key, _]) => key === fromUnit)![1];
+        const toBaseConverter = units[fromUnit];
         baseValue = fromVal / toBaseConverter(1);
       }
       const finalValue = units[toUnit](baseValue);
@@ -84,7 +84,7 @@ export const UnitConverterWidget: FC = () => {
             else if (toUnit === 'kelvin') baseValue = toVal - 273.15;
             else baseValue = toVal;
         } else {
-            const toBaseConverter = Object.entries(units).find(([key, _]) => key === toUnit)![1];
+            const toBaseConverter = units[toUnit];
             baseValue = toVal / toBaseConverter(1);
         }
         const finalValue = units[fromUnit](baseValue);

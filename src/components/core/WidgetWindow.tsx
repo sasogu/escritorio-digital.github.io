@@ -1,7 +1,7 @@
 // src/components/core/WidgetWindow.tsx
 
 import React from 'react';
-import { Rnd } from 'react-rnd';
+import { Rnd, type RndDragCallback, type RndResizeCallback } from 'react-rnd';
 import { X, Minus, Maximize, Minimize } from 'lucide-react';
 
 interface WidgetWindowProps {
@@ -11,8 +11,8 @@ interface WidgetWindowProps {
   position: { x: number; y: number };
   size: { width: number | string; height: number | string };
   zIndex: number;
-  onDragStop: (e: any, d: { x: number; y: number }) => void;
-  onResizeStop: (e: any, direction: any, ref: HTMLElement, delta: any, position: { x: number; y: number }) => void;
+  onDragStop: RndDragCallback;
+  onResizeStop: RndResizeCallback;
   onClose: () => void;
   onFocus: () => void;
   isMinimized?: boolean;

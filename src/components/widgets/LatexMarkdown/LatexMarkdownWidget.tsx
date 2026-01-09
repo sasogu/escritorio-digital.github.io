@@ -139,7 +139,9 @@ export const LatexMarkdownWidget: FC = () => {
 
     try {
       await document.fonts?.ready;
-    } catch {}
+    } catch (error) {
+      console.warn('No se pudieron cargar las fuentes para exportar.', error);
+    }
     await new Promise<void>((r) => requestAnimationFrame(() => r()));
 
     const cleanup = () => {

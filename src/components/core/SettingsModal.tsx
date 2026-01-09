@@ -85,7 +85,9 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     ];
     try {
       keysToClear.forEach(k => window.localStorage.removeItem(k));
-    } catch {}
+    } catch (error) {
+      console.warn('No se pudieron limpiar las preferencias locales.', error);
+    }
     // Recargar la página para aplicar el estado inicial
     window.location.reload();
   };

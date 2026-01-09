@@ -1,6 +1,7 @@
 // src/types/index.ts
 
 import type { FC, ReactNode } from 'react';
+import type { Theme } from '../context/ThemeContext';
 
 /**
  * Define la estructura de la configuración estática de un widget.
@@ -37,7 +38,7 @@ export interface ActiveWidget {
  * Contiene todos los ajustes que queremos persistir.
  */
 export interface DesktopProfile {
-  theme: any; // Usamos 'any' por simplicidad, se refiere a la estructura Theme de ThemeContext
+  theme: Theme;
   activeWidgets: ActiveWidget[];
   pinnedWidgets: string[];
 }

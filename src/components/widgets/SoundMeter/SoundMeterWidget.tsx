@@ -33,6 +33,10 @@ const LEVEL_CONFIG: Record<NoiseLevel, LevelInfo> = {
   },
 };
 
+const getAudioContextConstructor = (): typeof AudioContext | undefined => {
+  const win = window as Window & { webkitAudioContext?: typeof AudioContext };
+  return win.AudioContext ?? win.webkitAudioContext;
+};
 
 export const SoundMeterWidget: FC = () => {
   const { t } = useTranslation();
@@ -61,8 +65,13 @@ export const SoundMeterWidget: FC = () => {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
       streamRef.current = stream;
       
-      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
-      audioContextRef.current = new AudioContext();
+      const AudioContextConstructor = getAudioContextConstructor();
+      if (!AudioContextConstructor) {
+        alert(t('widgets.sound_meter.no_audio_support'));
+        setPermission('denied');
+        return;
+      }
+      audioContextRef.current = new AudioContextConstructor();
       const analyser = audioContextRef.current.createAnalyser();
       
       const source = audioContextRef.current.createMediaStreamSource(stream);

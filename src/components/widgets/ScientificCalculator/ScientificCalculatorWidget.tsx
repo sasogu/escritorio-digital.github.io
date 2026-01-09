@@ -117,7 +117,7 @@ export const ScientificCalculatorWidget: FC = () => {
 
       evalExpr = evalExpr.replace(/(\d+(?:\.\d+)?)!/g, (_, numStr) => {
         if (numStr.includes('.')) return 'Error';
-        let n = parseInt(numStr);
+        const n = parseInt(numStr);
         if (n > 20) return 'Infinity';
         if (n < 0) return 'Error';
         if (n === 0) return '1';
@@ -139,9 +139,13 @@ export const ScientificCalculatorWidget: FC = () => {
   };
 
   const handleBackspace = () => {
-    display.length > 1
-      ? (setDisplay(display.slice(0, -1)), setExpression(expression.slice(0, -1)))
-      : (setDisplay('0'), setExpression(''));
+    if (display.length > 1) {
+      setDisplay(display.slice(0, -1));
+      setExpression(expression.slice(0, -1));
+      return;
+    }
+    setDisplay('0');
+    setExpression('');
   };
   const handleClear = () => { setDisplay('0'); setExpression(''); };
 

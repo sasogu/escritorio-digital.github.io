@@ -3,7 +3,13 @@ import type { WidgetConfig } from '../../types';
 
 // 1. Importamos todos los módulos de widget de forma síncrona.
 //    { eager: true } es la clave para que el código esté disponible inmediatamente.
-const modules = import.meta.glob<any>('./*/*Widget.tsx', { eager: true });
+type WidgetModule = {
+    widgetConfig?: WidgetConfig;
+    default?: FC;
+    [key: string]: unknown;
+};
+
+const modules = import.meta.glob<WidgetModule>('./*/*Widget.tsx', { eager: true });
 
 // 2. Creamos el registro que vamos a exportar.
 const WIDGET_REGISTRY_TEMP: Record<string, WidgetConfig> = {};
@@ -19,7 +25,7 @@ for (const path in modules) {
         // Primero buscamos una exportación nombrada que termine en "Widget".
         const componentKey = Object.keys(mod).find(key => key.endsWith('Widget'));
         // Si no la encontramos, buscamos una exportación por defecto.
-        const Component = componentKey ? mod[componentKey] : mod.default;
+        const Component = (componentKey ? mod[componentKey] : mod.default) as FC | undefined;
 
         if (Component) {
             const config = mod.widgetConfig;

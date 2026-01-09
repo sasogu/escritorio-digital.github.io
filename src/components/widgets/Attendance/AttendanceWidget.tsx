@@ -25,6 +25,20 @@ interface Student {
 
 type AttendanceRecords = Record<string, Student[]>;
 
+interface AttendanceCsvRow {
+  id?: string;
+  name?: string;
+}
+
+interface AttendanceExportRow {
+  date: string;
+  id: number;
+  name: string;
+  status: Student['status'];
+  badges: string;
+  alerts: string;
+}
+
 // Constantes movidas dentro del componente para usar traducciones
 
 const formatDate = (date: Date): string => {
@@ -127,7 +141,7 @@ export const AttendanceWidget: FC = () => {
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    Papa.parse<any>(file, {
+    Papa.parse<AttendanceCsvRow>(file, {
       header: true,
       skipEmptyLines: true,
       complete: (results) => {
@@ -144,7 +158,7 @@ export const AttendanceWidget: FC = () => {
   };
 
   const handleExport = () => {
-    const dataToExport: any[] = [];
+    const dataToExport: AttendanceExportRow[] = [];
     Object.keys(records).sort().forEach(date => {
         records[date].forEach(s => {
             dataToExport.push({

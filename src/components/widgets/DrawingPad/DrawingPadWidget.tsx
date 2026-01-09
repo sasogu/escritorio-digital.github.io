@@ -474,7 +474,7 @@ export const DrawingPadWidget: React.FC = () => {
         case 'rectangle':
           context.strokeRect(startX, startY, width, height);
           break;
-        case 'circle':
+        case 'circle': {
           const centerX = (startX + offsetX) / 2;
           const centerY = (startY + offsetY) / 2;
           const radiusX = Math.abs(width / 2);
@@ -483,7 +483,8 @@ export const DrawingPadWidget: React.FC = () => {
           context.ellipse(centerX, centerY, radiusX, radiusY, 0, 0, 2 * Math.PI);
           context.stroke();
           break;
-        case 'arrow':
+        }
+        case 'arrow': {
           context.beginPath();
           context.moveTo(startX, startY);
           context.lineTo(offsetX, offsetY);
@@ -494,6 +495,7 @@ export const DrawingPadWidget: React.FC = () => {
           // Aumentado el tamaño de la cabeza de flecha para que sea más visible
           drawArrowhead(context, offsetX, offsetY, angle, brushSize * 4); 
           break;
+        }
         default:
           break;
       }
@@ -571,7 +573,7 @@ export const DrawingPadWidget: React.FC = () => {
             case 'rectangle':
                 context.strokeRect(startX, startY, width, height);
                 break;
-            case 'circle':
+            case 'circle': {
                 const centerX = (startX + finalX) / 2;
                 const centerY = (startY + finalY) / 2;
                 const radiusX = Math.abs(width / 2);
@@ -580,7 +582,8 @@ export const DrawingPadWidget: React.FC = () => {
                 context.ellipse(centerX, centerY, radiusX, radiusY, 0, 0, 2 * Math.PI);
                 context.stroke();
                 break;
-            case 'arrow':
+            }
+            case 'arrow': {
                 context.beginPath();
                 context.moveTo(startX, startY);
                 context.lineTo(finalX, finalY);
@@ -590,6 +593,7 @@ export const DrawingPadWidget: React.FC = () => {
                 const angle = Math.atan2(finalY - startY, finalX - startX);
                 drawArrowhead(context, finalX, finalY, angle, brushSize * 4);
                 break;
+            }
             default:
                 break;
         }
