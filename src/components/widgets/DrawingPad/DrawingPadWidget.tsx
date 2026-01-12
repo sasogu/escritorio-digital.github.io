@@ -5,7 +5,7 @@ import { Paintbrush, Eraser, Trash2, Pen, Highlighter, SprayCan, Image as ImageI
 // Asumiendo que WidgetConfig existe en tu proyecto. Si no, puedes quitar esta línea o definirla.
 
 // --- El Componente Principal del Widget de Dibujo ---
-export const DrawingPadWidget: React.FC = () => {
+export const DrawingPadWidget = () => {
   const { t } = useTranslation();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);

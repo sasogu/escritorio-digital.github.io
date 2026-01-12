@@ -63,6 +63,7 @@
         "math_science": "Matemàtiques i ciències",
         "resources": "Pissarra, escriptura i recursos",
         "interaction": "Interacció, atzar i jocs educatius",
+        "participation": "Eines participatives",
         "logic_games": "Jocs de lògica i dinàmica de classe",
         "gestures": "Gestos de treball",
         "other": "Altres"
@@ -541,6 +542,27 @@
     "directo_viewer": {
       "title": "Connexió en Directe",
       "go_to_repo": "Anar al repositori de Connexió en Directe"
+    },
+    "directo_vota": {
+      "title": "Votació simple"
+    },
+    "directo_escala": {
+      "title": "Escala de valoració"
+    },
+    "directo_nube": {
+      "title": "Núvol de paraules"
+    },
+    "directo_ideas": {
+      "title": "Pluja d'idees i vots"
+    },
+    "directo_muro": {
+      "title": "Mur interactiu"
+    },
+    "qplay": {
+      "title": "QPlay: Concurs interactiu"
+    },
+    "boardlive": {
+      "title": "BoardLive: Pissarra col·laborativa"
     },
     "drawing_pad": {
       "title": "Paleta de Dibuix",

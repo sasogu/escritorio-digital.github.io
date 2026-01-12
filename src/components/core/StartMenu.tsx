@@ -22,6 +22,7 @@ import {
     Puzzle,
     Hand,
     Layers,
+    Megaphone,
 } from 'lucide-react';
 import { DndContext, PointerSensor, KeyboardSensor, useSensor, useSensors, closestCenter, type DragEndEvent } from '@dnd-kit/core';
 import { SortableContext, arrayMove, verticalListSortingStrategy, useSortable, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
@@ -62,6 +63,7 @@ const categoryIcons: Record<string, CategoryIconConfig> = {
     math_science: { Icon: Sigma, className: 'bg-teal-100 text-teal-700' },
     resources: { Icon: PenTool, className: 'bg-amber-100 text-amber-700' },
     interaction: { Icon: Users, className: 'bg-rose-100 text-rose-700' },
+    participation: { Icon: Megaphone, className: 'bg-indigo-100 text-indigo-700' },
     logic_games: { Icon: Puzzle, className: 'bg-purple-100 text-purple-700' },
     gestures: { Icon: Hand, className: 'bg-orange-100 text-orange-700' },
     other: { Icon: Layers, className: 'bg-gray-100 text-gray-700' },
@@ -392,7 +394,7 @@ export const StartMenu: React.FC<StartMenuProps> = ({
     return (
         <div
             ref={menuRef}
-            className="fixed z-[10001] w-[min(30rem,calc(100vw-1rem))] max-h-[72vh] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden"
+            className="fixed z-[10001] w-[min(34rem,calc(100vw-1rem))] max-h-[72vh] bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden"
             style={{
                 left: menuPosition.left,
                 bottom: menuPosition.bottom,
@@ -520,7 +522,7 @@ export const StartMenu: React.FC<StartMenuProps> = ({
             </div>
             <div className="flex-1 overflow-hidden px-4 py-3 bg-gradient-to-b from-white to-gray-50">
                 <div className="flex items-start gap-4 h-full">
-                    <div ref={leftColumnRef} className="w-56 shrink-0 flex flex-col gap-4">
+                    <div ref={leftColumnRef} className="w-52 shrink-0 flex flex-col gap-4">
                         <div
                             className="pr-1"
                             style={{

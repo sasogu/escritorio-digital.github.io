@@ -63,6 +63,7 @@
         "math_science": "Math and science",
         "resources": "Board, writing, and resources",
         "interaction": "Interaction, chance, and educational games",
+        "participation": "Participation tools",
         "logic_games": "Logic games and class dynamics",
         "gestures": "Work gestures",
         "other": "Other"
@@ -541,6 +542,27 @@
     "directo_viewer": {
       "title": "Live Connection",
       "go_to_repo": "Go to Live Connection repository"
+    },
+    "directo_vota": {
+      "title": "Simple voting"
+    },
+    "directo_escala": {
+      "title": "Rating scale"
+    },
+    "directo_nube": {
+      "title": "Word cloud"
+    },
+    "directo_ideas": {
+      "title": "Brainstorming and voting"
+    },
+    "directo_muro": {
+      "title": "Interactive wall"
+    },
+    "qplay": {
+      "title": "QPlay: Interactive quiz"
+    },
+    "boardlive": {
+      "title": "BoardLive: Collaborative whiteboard"
     },
     "drawing_pad": {
       "title": "Drawing Pad",

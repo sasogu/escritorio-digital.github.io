@@ -25,12 +25,36 @@ export const WIDGET_CATEGORIES: WidgetCategory[] = [
     {
         id: 'resources',
         titleKey: 'settings.widgets.categories.resources',
-        widgetIds: ['notepad', 'drawing-pad', 'image-carousel', 'iframe', 'local-web', 'pdf-viewer', 'file-opener', 'directo-viewer', 'html-sandbox'],
+        widgetIds: [
+            'notepad',
+            'drawing-pad',
+            'image-carousel',
+            'iframe',
+            'local-web',
+            'pdf-viewer',
+            'file-opener',
+            'directo-viewer',
+            'html-sandbox',
+            'boardlive',
+        ],
     },
     {
         id: 'interaction',
         titleKey: 'settings.widgets.categories.interaction',
         widgetIds: ['dice', 'random-spinner', 'qr-code-generator', 'traffic-light', 'sound-meter', 'scoreboard'],
+    },
+    {
+        id: 'participation',
+        titleKey: 'settings.widgets.categories.participation',
+        widgetIds: [
+            'directo-vota',
+            'directo-escala',
+            'directo-nube',
+            'directo-ideas',
+            'directo-muro',
+            'qplay',
+            'boardlive',
+        ],
     },
     {
         id: 'logic_games',

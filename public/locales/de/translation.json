@@ -63,6 +63,7 @@
         "math_science": "Mathematik und Naturwissenschaften",
         "resources": "Tafel, Schreiben und Ressourcen",
         "interaction": "Interaktion, Zufall und Lernspiele",
+        "participation": "Partizipative Werkzeuge",
         "logic_games": "Logikspiele und Klassendynamik",
         "gestures": "Arbeitsgesten",
         "other": "Sonstige"
@@ -541,6 +542,27 @@
     "directo_viewer": {
       "title": "Live-Verbindung",
       "go_to_repo": "Zum Live-Verbindung-Repository"
+    },
+    "directo_vota": {
+      "title": "Einfache Abstimmung"
+    },
+    "directo_escala": {
+      "title": "Bewertungsskala"
+    },
+    "directo_nube": {
+      "title": "Wortwolke"
+    },
+    "directo_ideas": {
+      "title": "Brainstorming und Abstimmung"
+    },
+    "directo_muro": {
+      "title": "Interaktive Wand"
+    },
+    "qplay": {
+      "title": "QPlay: Interaktives Quiz"
+    },
+    "boardlive": {
+      "title": "BoardLive: Kollaboratives Whiteboard"
     },
     "drawing_pad": {
       "title": "Zeichenfläche",

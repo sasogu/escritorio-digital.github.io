@@ -10,7 +10,7 @@ interface Task {
   completed: boolean;
 }
 
-export const WorkListWidget: React.FC = () => {
+export const WorkListWidget = () => {
   const { t, ready } = useTranslation();
   const [tasks, setTasks] = useLocalStorage<Task[]>('work-list-tasks', []);
   const [newTask, setNewTask] = useState('');

@@ -64,6 +64,7 @@
         "math_science": "Mathématiques et sciences",
         "resources": "Tableau, écriture et ressources",
         "interaction": "Interaction, hasard et jeux éducatifs",
+        "participation": "Outils participatifs",
         "logic_games": "Jeux de logique et dynamique de classe",
         "gestures": "Gestes de travail",
         "other": "Autres"
@@ -542,6 +543,27 @@
     "directo_viewer": {
       "title": "Connexion en direct",
       "go_to_repo": "Aller au dépôt de Connexion en direct"
+    },
+    "directo_vota": {
+      "title": "Vote simple"
+    },
+    "directo_escala": {
+      "title": "Échelle d'évaluation"
+    },
+    "directo_nube": {
+      "title": "Nuage de mots"
+    },
+    "directo_ideas": {
+      "title": "Pluie d'idées et votes"
+    },
+    "directo_muro": {
+      "title": "Mur interactif"
+    },
+    "qplay": {
+      "title": "QPlay : Quiz interactif"
+    },
+    "boardlive": {
+      "title": "BoardLive : Tableau collaboratif"
     },
     "drawing_pad": {
       "title": "Palette de dessin",

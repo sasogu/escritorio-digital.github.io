@@ -65,6 +65,7 @@
         "math_science": "Matemática e ciências",
         "resources": "Quadro, escrita e recursos",
         "interaction": "Interação, azar e jogos educativos",
+        "participation": "Ferramentas participativas",
         "logic_games": "Jogos de lógica e dinâmica de turma",
         "gestures": "Gestos de trabalho",
         "other": "Outros"
@@ -543,6 +544,27 @@
     "directo_viewer": {
       "title": "Conexão ao Vivo",
       "go_to_repo": "Ir ao repositório Conexão ao Vivo"
+    },
+    "directo_vota": {
+      "title": "Votação simples"
+    },
+    "directo_escala": {
+      "title": "Escala de avaliação"
+    },
+    "directo_nube": {
+      "title": "Nuvem de palavras"
+    },
+    "directo_ideas": {
+      "title": "Chuva de ideias e votos"
+    },
+    "directo_muro": {
+      "title": "Mural interativo"
+    },
+    "qplay": {
+      "title": "QPlay: Concurso interativo"
+    },
+    "boardlive": {
+      "title": "BoardLive: Quadro colaborativo"
     },
     "drawing_pad": {
       "title": "Paleta de Desenho",

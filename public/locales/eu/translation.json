@@ -62,6 +62,7 @@
         "math_science": "Matematika eta zientziak",
         "resources": "Arbela, idazketa eta baliabideak",
         "interaction": "Elkarrekintza, zoria eta hezkuntza-jokoak",
+        "participation": "Parte-hartzeko tresnak",
         "logic_games": "Logika-jokoak eta klaseko dinamika",
         "gestures": "Lan-keinuak",
         "other": "Beste batzuk"
@@ -540,6 +541,27 @@
     "directo_viewer": {
       "title": "Zuzeneko Konexioa",
       "go_to_repo": "Joan Zuzeneko Konexioaren biltegira"
+    },
+    "directo_vota": {
+      "title": "Bozketa sinplea"
+    },
+    "directo_escala": {
+      "title": "Balorazio eskala"
+    },
+    "directo_nube": {
+      "title": "Hitz hodeia"
+    },
+    "directo_ideas": {
+      "title": "Ideia-jasa eta botoak"
+    },
+    "directo_muro": {
+      "title": "Horma interaktiboa"
+    },
+    "qplay": {
+      "title": "QPlay: Lehiaketa interaktiboa"
+    },
+    "boardlive": {
+      "title": "BoardLive: Arbel kolaboratiboa"
     },
     "drawing_pad": {
       "title": "Marrazketa Paleta",

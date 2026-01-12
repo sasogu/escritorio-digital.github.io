@@ -62,7 +62,7 @@ const MenuBar: React.FC<{ editor: Editor | null; onUpload: () => void; onDownloa
   );
 };
 
-export const NotepadWidget: React.FC = () => {
+export const NotepadWidget = () => {
   const { t } = useTranslation();
   const [content, setContent] = useLocalStorage('notepad-content-html', t('widgets.notepad.initial_content'));
   const fileInputRef = useRef<HTMLInputElement>(null);
