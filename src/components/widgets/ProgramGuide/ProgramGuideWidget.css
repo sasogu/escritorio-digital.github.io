@@ -1,0 +1,15 @@
+.program-guide-content {
+  height: 100%;
+  overflow: auto;
+  padding: 16px 20px;
+  color: var(--color-text-dark);
+}
+
+.program-guide-status {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-dark);
+  font-size: 0.95rem;
+}
