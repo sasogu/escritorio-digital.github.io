@@ -601,6 +601,15 @@ const DesktopUI: React.FC<{
             <CreditsModal
                 isOpen={isCreditsOpen}
                 onClose={() => setIsCreditsOpen(false)}
+                onOpenGuide={() => {
+                    const guideUrl = withBaseUrl('Guia-Escritorio-Digital.es.md');
+                    try {
+                        window.open(guideUrl, '_blank', 'noopener');
+                    } catch {
+                        // fallback: navigate in same tab
+                        window.location.href = guideUrl;
+                    }
+                }}
             />
             
             {/* --- ¡AQUÍ ESTÁ EL CAMBIO! Añadimos el nuevo componente a la interfaz --- */}
