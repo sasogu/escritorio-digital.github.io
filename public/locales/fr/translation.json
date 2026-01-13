@@ -87,7 +87,27 @@
       "show_datetime_help": "Affichées en haut à droite.",
       "reset_theme_button": "Réinitialiser le thème par défaut",
       "show_system_stats_label": "Afficher les statistiques système",
-      "show_system_stats_help": "Affichées à côté de l'horloge."
+      "show_system_stats_help": "Affichées à côté de l'horloge.",
+      "modal_title": "Personnaliser le thème",
+      "open_modal_title": "Personnalisation du thème",
+      "open_modal_help": "Choisis un thème prédéfini ou ajuste les couleurs et les fonds.",
+      "open_modal_button": "Ouvrir les thèmes",
+      "presets_title": "Thèmes prédéfinis",
+      "presets_help": "Choisis un style prêt à l'emploi.",
+      "screen_items_title": "Éléments à l'écran",
+      "presets": {
+        "classic": "Salle claire",
+        "chalkboard": "Tableau",
+        "slate": "Graphite",
+        "sand": "Sable",
+        "ocean": "Marin",
+        "confetti": "Confettis",
+        "sunrise": "Aurore",
+        "berry": "Framboise",
+        "mint": "Menthe"
+      },
+      "solid_color_title": "Couleur unie",
+      "solid_color_help": "Choisis une couleur et l’image de fond sera retirée."
     }
   },
   "toolbar": {

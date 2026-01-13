@@ -126,12 +126,11 @@ export const Toolbar: React.FC<ToolbarProps> = ({
           <LayoutGrid size={18} />
         </button>
       </div>
-      <div className="h-10 w-px bg-white/30"></div>
-      <div className="flex items-center gap-2 overflow-x-auto pr-1">
-        {visibleTasks.length === 0 ? (
-          <span className="text-xs text-text-light/70 px-2">{t('toolbar.no_open_windows')}</span>
-        ) : (
-          visibleTasks.map((widget) => (
+      {visibleTasks.length > 0 && (
+        <>
+          <div className="h-10 w-px bg-white/30"></div>
+          <div className="flex items-center gap-2 overflow-x-auto pr-1">
+            {visibleTasks.map((widget) => (
             <button
               key={widget.instanceId}
               type="button"
@@ -152,9 +151,10 @@ export const Toolbar: React.FC<ToolbarProps> = ({
                 <span className="truncate">{widget.title}</span>
               </span>
             </button>
-          ))
-        )}
-      </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };

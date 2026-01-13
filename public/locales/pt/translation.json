@@ -88,7 +88,27 @@
       "show_datetime_help": "Mostrada no canto superior direito.",
       "reset_theme_button": "Restaurar Tema Padrão",
       "show_system_stats_label": "Mostrar estatísticas do sistema",
-      "show_system_stats_help": "Mostradas ao lado do relógio."
+      "show_system_stats_help": "Mostradas ao lado do relógio.",
+      "modal_title": "Personalizar tema",
+      "open_modal_title": "Personalização do tema",
+      "open_modal_help": "Escolhe um tema predefinido ou ajusta cores e fundos.",
+      "open_modal_button": "Abrir temas",
+      "presets_title": "Temas predefinidos",
+      "presets_help": "Escolhe um aspeto pronto a usar.",
+      "screen_items_title": "Elementos no ecrã",
+      "presets": {
+        "classic": "Sala clara",
+        "chalkboard": "Quadro",
+        "slate": "Grafite",
+        "sand": "Areia",
+        "ocean": "Marinho",
+        "confetti": "Confete",
+        "sunrise": "Amanhecer",
+        "berry": "Framboesa",
+        "mint": "Hortelã"
+      },
+      "solid_color_title": "Cor sólida",
+      "solid_color_help": "Escolhe uma cor e a imagem de fundo será removida."
     }
   },
   "toolbar": {

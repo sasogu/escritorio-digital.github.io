@@ -86,7 +86,27 @@
       "show_datetime_help": "Shown in the top-right corner.",
       "reset_theme_button": "Reset to Default Theme",
       "show_system_stats_label": "Show system stats",
-      "show_system_stats_help": "Shown next to the clock."
+      "show_system_stats_help": "Shown next to the clock.",
+      "modal_title": "Customize theme",
+      "open_modal_title": "Theme customization",
+      "open_modal_help": "Choose a preset theme or adjust colors and wallpapers.",
+      "open_modal_button": "Open themes",
+      "presets_title": "Preset themes",
+      "presets_help": "Choose a ready-to-use look.",
+      "screen_items_title": "On-screen elements",
+      "presets": {
+        "classic": "Light classroom",
+        "chalkboard": "Chalkboard",
+        "slate": "Slate",
+        "sand": "Sand",
+        "ocean": "Ocean",
+        "confetti": "Confetti",
+        "sunrise": "Sunrise",
+        "berry": "Berry",
+        "mint": "Mint"
+      },
+      "solid_color_title": "Solid color",
+      "solid_color_help": "Choose a color and the wallpaper will be removed."
     }
   },
   "toolbar": {

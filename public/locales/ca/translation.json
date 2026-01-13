@@ -86,7 +86,27 @@
       "show_datetime_help": "Es mostra a la cantonada superior dreta.",
       "reset_theme_button": "Restablir Tema per Defecte",
       "show_system_stats_label": "Mostrar estadístiques del sistema",
-      "show_system_stats_help": "Es mostren al costat del rellotge."
+      "show_system_stats_help": "Es mostren al costat del rellotge.",
+      "modal_title": "Personalitzar el tema",
+      "open_modal_title": "Personalització del tema",
+      "open_modal_help": "Tria un tema predefinit o ajusta colors i fons.",
+      "open_modal_button": "Obrir temes",
+      "presets_title": "Temes predefinits",
+      "presets_help": "Tria un aspecte llest per usar.",
+      "screen_items_title": "Elements en pantalla",
+      "presets": {
+        "classic": "Aula clara",
+        "chalkboard": "Pissarra",
+        "slate": "Grafit",
+        "sand": "Sorra",
+        "ocean": "Marí",
+        "confetti": "Confeti",
+        "sunrise": "Alba",
+        "berry": "Gerds",
+        "mint": "Menta"
+      },
+      "solid_color_title": "Color sòlid",
+      "solid_color_help": "Selecciona un color i es traurà la imatge de fons."
     }
   },
   "toolbar": {

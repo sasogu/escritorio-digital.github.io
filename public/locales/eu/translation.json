@@ -85,7 +85,27 @@
       "show_datetime_help": "Goiko eskuineko izkinan erakusten da.",
       "reset_theme_button": "Berrezarri gai lehenetsia",
       "show_system_stats_label": "Sistemaren estatistikak erakutsi",
-      "show_system_stats_help": "Erlojuaren ondoan erakusten dira."
+      "show_system_stats_help": "Erlojuaren ondoan erakusten dira.",
+      "modal_title": "Gaia pertsonalizatu",
+      "open_modal_title": "Gaia pertsonalizatzea",
+      "open_modal_help": "Aukeratu aurrezarritako gai bat edo doitu koloreak eta atzeko planoak.",
+      "open_modal_button": "Gaiak ireki",
+      "presets_title": "Aurrezarritako gaiak",
+      "presets_help": "Aukeratu erabilteko prest dagoen itxura.",
+      "screen_items_title": "Pantailako elementuak",
+      "presets": {
+        "classic": "Ikasgelako argia",
+        "chalkboard": "Arbel",
+        "slate": "Grafito",
+        "sand": "Harea",
+        "ocean": "Itsas",
+        "confetti": "Konfeti",
+        "sunrise": "Egunsentia",
+        "berry": "Mugurdi",
+        "mint": "Menta"
+      },
+      "solid_color_title": "Kolore solidoa",
+      "solid_color_help": "Aukeratu kolorea eta atzeko planoko irudia kenduko da."
     }
   },
   "toolbar": {
