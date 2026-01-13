@@ -331,7 +331,6 @@ export const LocalWebWidget: FC = () => {
     const [editingSiteName, setEditingSiteName] = useState('');
     const [statusMessage, setStatusMessage] = useState('');
     const [storageEstimate, setStorageEstimate] = useState<StorageEstimate>({ usage: null, quota: null });
-    const [localUsage, setLocalUsage] = useState(0);
     const [isListCollapsed, setIsListCollapsed] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const folderInputRef = useRef<HTMLInputElement>(null);
@@ -342,7 +341,6 @@ export const LocalWebWidget: FC = () => {
         const allSites = await getAllSites(profileName);
         allSites.sort((a, b) => b.updatedAt - a.updatedAt);
         setSites(allSites);
-        setLocalUsage(allSites.reduce((sum, site) => sum + site.totalBytes, 0));
     };
 
     const refreshStorage = async () => {

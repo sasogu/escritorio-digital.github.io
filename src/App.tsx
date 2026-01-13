@@ -182,9 +182,6 @@ const DesktopUI: React.FC<{
     const minimizeAllWindows = useCallback(() => {
         setActiveWidgets(prev => prev.map(w => ({ ...w, isMinimized: true })));
     }, [setActiveWidgets]);
-    const restoreAllWindows = useCallback(() => {
-        setActiveWidgets(prev => prev.map(w => ({ ...w, isMinimized: false })));
-    }, [setActiveWidgets]);
     const toggleMaximize = (instanceId: string) => {
         const newZ = highestZ + 1;
         setHighestZ(newZ);
@@ -415,7 +412,6 @@ const DesktopUI: React.FC<{
     };
 
     const hasOpenWidgets = activeProfile.activeWidgets.length > 0;
-    const hasMinimizedWidgets = activeProfile.activeWidgets.some((widget) => widget.isMinimized);
     const storageUsed = storageEstimate.usage;
     const storageQuota = storageEstimate.quota;
     const storageFree = storageUsed != null && storageQuota != null ? Math.max(0, storageQuota - storageUsed) : null;
@@ -650,6 +646,7 @@ const DesktopUI: React.FC<{
                             <button
                                 className="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center gap-2"
                                 onClick={() => {
+                                    if (!contextWidgetId) return;
                                     if (contextIsPinned) {
                                         setPinnedWidgets(prev => prev.filter(id => id !== contextWidgetId));
                                     } else {
