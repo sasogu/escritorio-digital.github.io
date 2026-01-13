@@ -147,11 +147,7 @@ export const ProfileSwitcher: React.FC<ProfileSwitcherProps> = ({
 
   useEffect(() => {
     if (!isBackupOpen) return;
-    if (selectedProfiles.length === 0) {
-      setHasLocalWeb(false);
-      setIncludeLocalWeb(false);
-      return;
-    }
+    if (selectedProfiles.length === 0) return;
     getLocalWebStats(selectedProfiles, activeProfileName)
       .then((stats) => {
         const available = stats.siteCount > 0;
